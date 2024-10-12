@@ -65,7 +65,7 @@ public class ProductController {
     }
 
     @DeleteMapping("/products/{id}")
-    public ResponseEntity<Object> updateProduct(@PathVariable(value = "id") UUID id){
+    public ResponseEntity<Object> deleteProduct(@PathVariable(value = "id") UUID id){
         Optional<ProductModel> product0 = repository.findById(id);
         if(product0.isEmpty()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Product not found!");
